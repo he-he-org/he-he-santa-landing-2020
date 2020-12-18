@@ -70,8 +70,8 @@
         </div>
     </div>
 </div>
-{{ $js := resources.Get "index.ts" | js.Build }}
-<script src="{{ $js.Permalink }}"></script>
+{{ $js_file := resources.Get "index.ts" | js.Build }}
+<script src="{{ $js_file.Permalink }}"></script>
 
 </body>
 </html>
