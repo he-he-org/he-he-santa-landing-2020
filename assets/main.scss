@@ -24,7 +24,7 @@ button {
     justify-content: center;
     align-items: center;
     background: url('{{ (resources.Get "bg.jpg").Permalink }}');
-    background-position: center;
+    background-position: 30% center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -176,4 +176,28 @@ button {
 
 .screen-content {
   position: relative;
+}
+
+@media (max-width: 480px) {
+  .screen {
+    &.second {
+      padding: 9rem 9rem;
+
+      .bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .donate {
+        align-items: unset;
+      }
+
+      .amounts {
+        justify-content: space-between;
+
+        > button:not(:first-child) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
 }
