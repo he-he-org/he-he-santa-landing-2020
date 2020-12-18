@@ -180,6 +180,12 @@ button {
 
 @media (max-width: 480px) {
   .screen {
+    &.first {
+      .logo {
+        max-width: 90vw;
+      }
+    }
+
     &.second {
       padding: 9rem 9rem;
 
@@ -196,6 +202,12 @@ button {
 
         > button:not(:first-child) {
           margin-left: 0;
+        }
+
+        > button {
+          &::before {
+            padding: 5rem 7rem;
+          }
         }
       }
     }
