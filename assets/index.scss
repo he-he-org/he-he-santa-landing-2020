@@ -166,6 +166,11 @@
       &.isVisible {
         opacity: 1;
       }
+
+      &:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
     }
 
     .details {

@@ -50,6 +50,7 @@ checkoutButton.addEventListener('click', () => {
     console.error(`Price is not selected, unable to make a payment`)
     return;
   }
+  checkoutButton.disabled = true;
   stripe
     .redirectToCheckout({
       lineItems: [{ price: STRIPE_PRICE_ID, quantity: 1 }],
@@ -61,9 +62,11 @@ checkoutButton.addEventListener('click', () => {
       if (result.error) {
         errorMessage.textContent = result.error.message;
       }
+      checkoutButton.disabled = false;
     })
     .catch((e) => {
       errorMessage.textContent = 'Извините, что-то пошло не так :('
+      checkoutButton.disabled = false;
       throw e;
     });
 });
