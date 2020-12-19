@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
     {{ $style := resources.Get "payment_result.scss" | resources.ExecuteAsTemplate "payment_result.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>
 <body>
     <h1 class="message">{{ .Params.message }}</h1>

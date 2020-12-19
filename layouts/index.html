@@ -7,13 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     {{ $style := resources.Get "index.scss" | resources.ExecuteAsTemplate "index.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>
 <body>
 <div class="screen cover">
     <div class="screen-content">
-        {{ $logo := (resources.Get "logo.svg").Permalink }}
+        {{ $logo := (resources.Get "logo.svg").RelPermalink }}
         <img alt="Health&Help logo" class="logo" src="{{ $logo }}"/>
         <h1>Секретный Cанта для наших подписчиков</h1>
     </div>
@@ -77,7 +76,7 @@
 <script src="https://js.stripe.com/v3"></script>
 {{ $params := (dict "STRIPE_PUBLISHABLE_KEY" .Site.Params.STRIPE_PUBLISHABLE_KEY) }}
 {{ $js_file := resources.Get "index.js" | js.Build (dict "params" $params) }}
-<script src="{{ $js_file.Permalink }}"></script>
+<script src="{{ $js_file.RelPermalink }}"></script>
 
 </body>
 </html>

@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('{{ (resources.Get "bg.jpg").Permalink }}');
+    background: url('{{ (resources.Get "bg.jpg").RelPermalink }}');
     background-position: 30% center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,7 +44,7 @@
   }
 
   &.intro {
-    background: url('{{ (resources.Get "bg_intro.jpg").Permalink }}');
+    background: url('{{ (resources.Get "bg_intro.jpg").RelPermalink }}');
     background-position: 30% center;
     background-repeat: no-repeat;
     background-size: cover;
