@@ -1,12 +1,6 @@
 [context.production.environment]
   HUGO_VERSION = "0.79.0"
   HUGO_ENV = "production"
-  HUGO_PARAMS_STRIPE_PUBLISHABLE_KEY = "pk_live_0rEgoe4LSNQL22eihCHkXTr70025zna97b"
-  HUGO_PARAMS_STRIPE_PRICE_5_USD = "price_1I05VOIjit1s7RiHLrA7mwod"
-  HUGO_PARAMS_STRIPE_PRICE_10_USD = "price_1I0AjfIjit1s7RiHXPH6fPj1"
-  HUGO_PARAMS_STRIPE_PRICE_25_USD = "price_1I0AjuIjit1s7RiHTa1TVk3R"
-  HUGO_PARAMS_STRIPE_PRICE_50_USD = "price_1I0Ak6Ijit1s7RiHvefKzTmx"
-  HUGO_PARAMS_STRIPE_PRICE_100_USD = "price_1I0AkHIjit1s7RiHWkeku1AX"
 
 [build]
   publish = "public"
