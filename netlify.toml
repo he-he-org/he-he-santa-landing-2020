@@ -1,7 +1,14 @@
 [context.production.environment]
   HUGO_VERSION = "0.79.0"
   HUGO_ENV = "production"
+  HUGO_PARAMS_STRIPE_PUBLISHABLE_KEY = "pk_test_gpUMCtiEpoRyqVMMi3iEvE1D00JwfBZ9EF"
+  HUGO_PARAMS_STRIPE_PRICE_5_USD = "price_1I07m0Ijit1s7RiHMUeIwCl8"
+  HUGO_PARAMS_STRIPE_PRICE_10_USD = "price_1I07mDIjit1s7RiH9zrq5vNj"
+  HUGO_PARAMS_STRIPE_PRICE_25_USD = "price_1I07mTIjit1s7RiH2Zd9XQDJ"
+  HUGO_PARAMS_STRIPE_PRICE_50_USD = "price_1I07mhIjit1s7RiHpA4kbqoD"
+  HUGO_PARAMS_STRIPE_PRICE_100_USD = "price_1I07mvIjit1s7RiHQnZLV11p"
 
 [build]
   publish = "public"
   command = "hugo --gc --minify"
+  functions = "netlify/functions"
