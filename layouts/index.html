@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Health&Help Secret Santa</title>
+    <title>{{ .Site.Title }}</title>
     <meta name="viewport" content="initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    {{ $style := resources.Get "main.scss" | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    {{ $style := resources.Get "index.scss" | resources.ExecuteAsTemplate "index.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 
 </head>
@@ -32,13 +32,14 @@
         <div class="donate">
             <h1>Сколько вы готовы пожертвовать?</h1>
             <div class="amounts" id="amounts">
-                <button type="button" data-value="5">5$</button>
-                <button type="button" data-value="10">10$</button>
-                <button type="button" data-value="25">25$</button>
-                <button type="button" data-value="50">50$</button>
-                <button type="button" data-value="100">100$</button>
+                <button type="button" data-value="5" data-stripe-price="{{ .Site.Params.STRIPE_PRICE_5_USD }}">5$</button>
+                <button type="button" data-value="10" data-stripe-price="{{ .Site.Params.STRIPE_PRICE_10_USD }}">10$</button>
+                <button type="button" data-value="25" data-stripe-price="{{ .Site.Params.STRIPE_PRICE_25_USD }}">25$</button>
+                <button type="button" data-value="50" data-stripe-price="{{ .Site.Params.STRIPE_PRICE_50_USD }}">50$</button>
+                <button type="button" data-value="100" data-stripe-price="{{ .Site.Params.STRIPE_PRICE_100_USD }}">100$</button>
             </div>
             <button class="donateButton" id="donateButton">Пожертвовать</button>
+            <div class="errorMessage" id="errorMessage"></div>
         </div>
         <div class="details" id="details">
             <div class="amount-details" data-value="5">
@@ -73,7 +74,9 @@
         </div>
     </div>
 </div>
-{{ $js_file := resources.Get "index.js" | js.Build "index.js" }}
+<script src="https://js.stripe.com/v3"></script>
+{{ $params := (dict "STRIPE_PUBLISHABLE_KEY" .Site.Params.STRIPE_PUBLISHABLE_KEY) }}
+{{ $js_file := resources.Get "index.js" | js.Build (dict "params" $params) }}
 <script src="{{ $js_file.Permalink }}"></script>
 
 </body>

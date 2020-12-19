@@ -1,0 +1,16 @@
+@import "reset.scss";
+
+:root {
+  font-size: 4px;
+  --red: #DF0B25;
+}
+
+html, button {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+button {
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}

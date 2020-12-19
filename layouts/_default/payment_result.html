@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Title }} - Health&Help Secret Santa</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    {{ $style := resources.Get "payment_result.scss" | resources.ExecuteAsTemplate "payment_result.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+</head>
+<body>
+    <h1 class="message">{{ .Params.message }}</h1>
+    <a href="/" class="backLink">Вернуться</a>
+</body>
+</html>

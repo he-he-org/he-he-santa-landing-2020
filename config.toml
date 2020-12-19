@@ -1,3 +1,10 @@
-baseURL = "https://quizzical-feynman-cf7994.netlify.app"
-languageCode = "en-us"
+languageCode = "ru-ru"
 title = "Health&Help Secret Santa"
+
+[params]
+    STRIPE_PUBLISHABLE_KEY = "pk_test_gpUMCtiEpoRyqVMMi3iEvE1D00JwfBZ9EF"
+    STRIPE_PRICE_5_USD = "price_1I07m0Ijit1s7RiHMUeIwCl8"
+    STRIPE_PRICE_10_USD = "price_1I07mDIjit1s7RiH9zrq5vNj"
+    STRIPE_PRICE_25_USD = "price_1I07mTIjit1s7RiH2Zd9XQDJ"
+    STRIPE_PRICE_50_USD = "price_1I07mhIjit1s7RiHpA4kbqoD"
+    STRIPE_PRICE_100_USD = "price_1I07mvIjit1s7RiHQnZLV11p"
