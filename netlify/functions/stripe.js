@@ -23,7 +23,7 @@ exports.handler = async function(event, context) {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ id: session.id })
+      body: JSON.stringify({ id: session.id, env: process.env })
     };
   } catch (e) {
     return {
