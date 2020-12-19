@@ -2,7 +2,7 @@ exports.handler = async function(event, context) {
   const SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 
   if (!SECRET_KEY) {
-    throw new Error(`Unable to read secret key from env varialble STRIPE_SECRET_KEY`)
+    throw new Error(`Unable to read secret key from env variable STRIPE_SECRET_KEY`)
   }
 
   const stripe = require('stripe')(SECRET_KEY);
