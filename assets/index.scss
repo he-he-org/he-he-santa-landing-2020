@@ -33,12 +33,9 @@
   }
 
   &.intro {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.35) 100%), url('{{ (resources.Get "bg_intro.jpg").RelPermalink }}');
-    background-position: 30% center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
-    color: white;
+    color: black;
+    background: white;
 
     .screen-content {
       padding: 20vh 5vw 5vh 10vw;
