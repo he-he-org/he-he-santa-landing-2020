@@ -14,3 +14,9 @@ button {
     cursor: pointer;
   }
 }
+
+@media (min-width: 1440px) {
+  :root {
+    font-size: 5px;
+  }
+}
