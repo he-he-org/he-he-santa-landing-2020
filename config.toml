@@ -1,5 +1,12 @@
 languageCode = "ru-ru"
 title = "Health&Help Secret Santa"
+defaultContentLanguage = "ru"
+
+[languages]
+  [languages.ru]
+    weight = 1
+  [languages.en]
+    weight = 2
 
 [params]
-    STRIPE_PUBLISHABLE_KEY = "pk_live_0rEgoe4LSNQL22eihCHkXTr70025zna97b"
+STRIPE_PUBLISHABLE_KEY = "pk_live_0rEgoe4LSNQL22eihCHkXTr70025zna97b"

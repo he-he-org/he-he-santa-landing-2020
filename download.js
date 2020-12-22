@@ -20,41 +20,44 @@ if (!CONTENTFUL_SPACE_ID) {
 
 (async () => {
   try {
+    for (const {lang, locale} of [
+      { lang: 'en', locale: 'en-US' },
+      { lang: 'ru', locale: 'ru-RU' },
+    ]) {
+      const client = contentful.createClient({
+        space: CONTENTFUL_SPACE_ID,
+        accessToken: CONTENTFUL_SECRET_KEY,
+      });
 
-    const client = contentful.createClient({
-      space: CONTENTFUL_SPACE_ID,
-      accessToken: CONTENTFUL_SECRET_KEY,
-    });
+      const presents = await client.getEntries({
+        locale: locale,
+        order: 'fields.price',
+        content_type: PRESENT_ENTRY_TYPE,
+        'fields.presentForUs[ne]': true,
+      })
 
-    const ru = 'ru-RU';
+      const { fields: staticTexts } = await client.getEntry(CONTENTFUL_STATIC_TEXT_ID, { locale });
 
-    const presents = await client.getEntries({
-      locale: ru,
-      order: 'fields.price',
-      content_type: PRESENT_ENTRY_TYPE,
-      'fields.presentForUs[ne]': true,
-    })
+      const specialPresents = await client.getEntries({
+        locale: locale,
+        order: 'fields.presentForUs,fields.price',
+        content_type: PRESENT_ENTRY_TYPE,
+        'fields.presentForUs': true,
+      })
 
-    const { fields: staticTexts } = await client.getEntry(CONTENTFUL_STATIC_TEXT_ID, { locale: ru });
+      fs.writeFileSync(`content/_index.${lang}.md`, JSON.stringify(
+        {
+          ...staticTexts,
+          'presents': [
+            ...presents.items,
+            ...specialPresents.items,
+          ].map(({ sys, fields }) => ({ id: sys.id, ...fields })),
+        },
+        null,
+        2,
+      ))
 
-    const specialPresents = await client.getEntries({
-      locale: ru,
-      order: 'fields.presentForUs,fields.price',
-      content_type: PRESENT_ENTRY_TYPE,
-      'fields.presentForUs': true,
-    })
-
-    fs.writeFileSync('content/_index.md', JSON.stringify(
-      {
-        ...staticTexts,
-        'presents': [
-          ...presents.items,
-          ...specialPresents.items,
-        ].map(({ sys, fields }) => ({ id: sys.id, ...fields })),
-      },
-      null,
-      2,
-    ))
+    }
 
     console.log('Content downloaded')
   } catch (e) {

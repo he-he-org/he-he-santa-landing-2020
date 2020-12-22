@@ -5,4 +5,5 @@ resources/_gen
 # Local Netlify folder
 .netlify
 netlify/functions/node_modules
-content/_index.md
+content/_index.ru.md
+content/_index.en.md
