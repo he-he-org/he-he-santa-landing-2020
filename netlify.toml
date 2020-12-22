@@ -4,7 +4,7 @@
 
 [build]
   publish = "public"
-  command = "echo 1; hugo --gc --minify && tail -f /dev/null"
+  command = "npm run build"
   functions = "netlify/functions"
 
 [dev]

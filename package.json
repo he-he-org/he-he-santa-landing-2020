@@ -9,7 +9,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node download.js && hugo server -D"
+    "start": "node download.js && hugo server -D",
+    "build": "node download.js && hugo --gc --minify"
   },
   "repository": {
     "type": "git",
