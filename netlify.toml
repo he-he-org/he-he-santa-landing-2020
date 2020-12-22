@@ -4,8 +4,11 @@
 
 [build]
   publish = "public"
-  command = "hugo --gc --minify"
+  command = "echo 1; hugo --gc --minify && tail -f /dev/null"
   functions = "netlify/functions"
+
+[dev]
+  command = "npm run start"
 
 [[plugins]]
   package = "@netlify/plugin-functions-install-core"

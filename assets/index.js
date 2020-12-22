@@ -17,19 +17,21 @@ const hideDetailsButton = $('#hideDetailsButton')[0];
 const allAmountsButtons = $('#amounts button');
 const onClickAmount = (e) => {
   const amount = e.currentTarget.getAttribute('data-value')
+  const forUs = e.currentTarget.getAttribute('data-for-us')
+  const id = e.currentTarget.getAttribute('data-id')
   STRIPE_PRICE_ID = e.currentTarget.getAttribute('data-stripe-price')
   for (const el of allAmountsButtons) {
     el.classList.toggle('isActive', el === e.currentTarget);
   }
   for (const detailsEl of $('#details .amount-details')) {
-    if (detailsEl.getAttribute('data-value') === amount) {
+    if (detailsEl.getAttribute('data-id') === id) {
       detailsEl.classList.add('isVisible')
     } else {
       detailsEl.classList.remove('isVisible')
     }
   }
   for (const imgEl of $('#bg-list > img')) {
-    if (imgEl.getAttribute('data-value') === amount) {
+    if (imgEl.getAttribute('data-value') === amount && imgEl.getAttribute('data-for-us') === forUs) {
       imgEl.classList.add('isVisible')
     } else {
       imgEl.classList.remove('isVisible')

@@ -1,0 +1,24 @@
+{
+  "name": "he-he-landing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "download.js",
+  "dependencies": {
+    "contentful": "^8.1.4",
+    "stripe": "^8.129.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node download.js && hugo server -D"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/he-he-org/he-he-santa-landing.git"
+  },
+  "author": "Nikolai Mavrenkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/he-he-org/he-he-santa-landing/issues"
+  },
+  "homepage": "https://github.com/he-he-org/he-he-santa-landing#readme"
+}

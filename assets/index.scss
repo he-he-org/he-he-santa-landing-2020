@@ -119,15 +119,19 @@
       font-weight: bold;
     }
 
-    p {
+    .text {
       font-size: 4.5rem;
       line-height: 1.1em;
+      margin-top: 1em;
 
-      &:not(:first-child) {
-        margin-top: 1em;
-        line-height: 1.1em;
+      p {
+        &:not(:first-child) {
+          margin-top: 1em;
+          line-height: 1.1em;
+        }
       }
     }
+
 
     .screen-content {
       margin-top: 20rem;
@@ -160,9 +164,14 @@
         border: none;
         font-size: 6rem;
         padding: 0;
+        outline: none;
 
         &:not(:first-child) {
           margin-left: 10rem;
+        }
+
+        &[data-for-us="true"] {
+          color: #ffcb00;
         }
 
         &::before {
