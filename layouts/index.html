@@ -29,10 +29,11 @@
       <img data-value="default" data-for-us="false" class="isVisible" src='{{ (resources.Get "amount_not_selected.jpg").RelPermalink }}' />
       <img data-value="5"   data-for-us="false"class="right-bottom" src='{{ (resources.Get "5_usd.jpg").RelPermalink }}' />
       <img data-value="10"  data-for-us="false" class="right-bottom" src='{{ (resources.Get "10_usd.jpg").RelPermalink }}' />
+      <img data-value="25"  data-for-us="false" src='{{ (resources.Get "25_usd.jpg").RelPermalink }}' />
       <img data-value="30"  data-for-us="false" src='{{ (resources.Get "30_usd.jpg").RelPermalink }}' />
       <img data-value="50"  data-for-us="false" src='{{ (resources.Get "50_usd.jpg").RelPermalink }}' />
       <img data-value="100"  data-for-us="false" class="right-bottom" src='{{ (resources.Get "100_usd.jpg").RelPermalink }}' />
-        <img data-value="10" data-for-us="true" class="right-bottom" src='{{ (resources.Get "10_usd_for_us.jpg").RelPermalink }}' />
+      <img data-value="10" data-for-us="true" class="right-bottom" src='{{ (resources.Get "10_usd_for_us.jpg").RelPermalink }}' />
     </div>
         <div class="donate">
             <h1>{{ .Params.donateAmountPrompt }}</h1>
@@ -53,9 +54,6 @@
         {{ with .Params.presents }}
             {{ range . }}
                 <div class="amount-details" data-value="{{ .price }}" data-id="{{ .id }}">
-                    {{ $imgName := printf "%v_usd" .price }}
-                    {{ $imgName := (cond (eq .presentForUs true) (printf "%v_for_us.jpg" $imgName ) $imgName) }}
-                    <img  class="cover" src='{{ (resources.Get (printf "%v_usd.jpg" .price )).RelPermalink }}.jpg' />
                     <h2>{{ .title }}</h2>
                     <div class="text">{{ .body | markdownify }}</div>
                 </div>
