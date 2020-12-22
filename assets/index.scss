@@ -232,7 +232,7 @@
       bottom: 8rem;
       right: 12rem;
       max-width: 200rem;
-      width: 100vw;
+      width: calc(100vw - 12rem * 2);
       z-index: 5;
 
       .amount-details {
