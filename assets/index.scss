@@ -90,6 +90,14 @@
         transition: opacity 700ms;
         z-index: 2;
 
+        &.left-bottom {
+          object-position: left bottom;
+        }
+
+        &.right-bottom {
+          object-position: right bottom;
+        }
+
         &.isVisible {
           opacity: 1;
         }
@@ -223,7 +231,7 @@
       position: absolute;
       bottom: 8rem;
       right: 12rem;
-      max-width: 150rem;
+      max-width: 200rem;
       width: 100vw;
       z-index: 5;
 
