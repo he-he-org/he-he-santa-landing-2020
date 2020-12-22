@@ -9,6 +9,10 @@ html, button {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 button {
   &:not(:disabled) {
     cursor: pointer;
