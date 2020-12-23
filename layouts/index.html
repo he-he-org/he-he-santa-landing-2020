@@ -45,7 +45,6 @@
                 {{ end }}
             </div>
             <div class="controls">
-                <button class="showDetailsButton" id="showDetailsButton">{{ .Params.showDetailsButton }}</button>
                 <button class="donateButton" id="donateButton">{{ .Params.donateButton }}</button>
                 <div class="errorMessage" id="errorMessage"></div>
             </div>
@@ -59,7 +58,6 @@
                 </div>
             {{ end }}
         {{ end }}
-        <button class="hideDetailsButton" id="hideDetailsButton">{{ .Params.closeDetailsButton }}</button>
     </div>
 </div>
 <script src="https://js.stripe.com/v3"></script>

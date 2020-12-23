@@ -11,8 +11,6 @@ function $(selector) {
 let STRIPE_PRICE_ID = null;
 
 const donateButtonEl = $('#donateButton')[0];
-const showDetailsButtonEl = $('#showDetailsButton')[0];
-const hideDetailsButton = $('#hideDetailsButton')[0];
 
 const allAmountsButtons = $('#amounts button');
 const onClickAmount = (e) => {
@@ -38,19 +36,11 @@ const onClickAmount = (e) => {
     }
   }
   donateButtonEl.classList.add('isVisible')
-  showDetailsButtonEl.classList.add('isVisible')
 };
 for (const element of allAmountsButtons) {
   element.addEventListener('click', onClickAmount)
 }
 
-showDetailsButton.addEventListener('click', () => {
-  $('#details')[0].classList.add('isVisible');
-})
-
-hideDetailsButton.addEventListener('click', () => {
-  $('#details')[0].classList.remove('isVisible');
-})
 
 /**
  Stripe

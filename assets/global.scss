@@ -1,7 +1,7 @@
 @import "reset.scss";
 
 :root {
-  font-size: 4px;
+  font-size: .597vmin;
   --red: #DF0B25;
 }
 
@@ -16,11 +16,5 @@ body {
 button {
   &:not(:disabled) {
     cursor: pointer;
-  }
-}
-
-@media (min-width: 1440px) {
-  :root {
-    font-size: 5px;
   }
 }
