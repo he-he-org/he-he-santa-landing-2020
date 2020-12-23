@@ -1,9 +1,11 @@
 .idea
 public
 resources/_gen
+node_modules
 
 # Local Netlify folder
 .netlify
 netlify/functions/node_modules
 content/_index.ru.md
 content/_index.en.md
+.DS_Store
