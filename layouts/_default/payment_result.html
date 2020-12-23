@@ -12,6 +12,6 @@
 </head>
 <body>
     <h1 class="message">{{ .Params.message }}</h1>
-    <a href="/" class="backLink">Вернуться</a>
+    <a href='{{ "/" | relLangURL }}' class="backLink">{{ .Params.getBack }}</a>
 </body>
 </html>

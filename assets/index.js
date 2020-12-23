@@ -1,5 +1,8 @@
 import * as params from '@params';
 
+const DEFAULT_LANG = 'ru';
+const LANG = window.location.pathname.split('/')[1] === 'en' ? 'en' : DEFAULT_LANG
+
 function $(selector) {
   const result = [];
   document.querySelectorAll(selector).forEach((element) => {
@@ -65,7 +68,7 @@ checkoutButton.addEventListener('click', () => {
     .redirectToCheckout({
       lineItems: [{ price: STRIPE_PRICE_ID, quantity: 1 }],
       mode: 'payment',
-      successUrl: `${window.location.origin}/success/`,
+      successUrl: `${window.location.origin}${LANG === DEFAULT_LANG ? '' : `/${LANG}`}/success/`,
       cancelUrl: window.location.origin,
     })
     .then(function (result) {
