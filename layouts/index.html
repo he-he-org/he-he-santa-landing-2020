@@ -12,6 +12,10 @@
 <body>
 <div class="screen cover">
     <div class="screen-content">
+        <div class="language-switch">
+            <a href="/">RU</a>
+            <a href="/en">EN</a>
+        </div>
         {{ $logo := (resources.Get "logo.svg").RelPermalink }}
         <img alt="Health&Help logo" class="logo" src="{{ $logo }}"/>
         <h1>{{ .Params.coverHeader | markdownify }}</h1>

@@ -19,6 +19,20 @@
       color: white;
     }
 
+    .language-switch {
+      font-size: 4rem;
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      display: flex;
+
+      > a {
+        display: block;
+        padding: 2rem 3rem;
+        text-decoration: none;
+      }
+    }
+
     .screen-content {
       display: flex;
       flex-direction: column;
